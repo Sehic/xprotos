@@ -1,0 +1,16 @@
+syntax = "proto3";
+package com.reeinvent.backend;
+
+option java_multiple_files = true;
+option java_package = "com.reeinvent.backend";
+
+import "synonym/SynonymObjects.proto";
+
+service SynonymService {
+  rpc UpsertWord(GRPCWord) returns (GRPCWord);
+  rpc DeleteWord(GRPCWord) returns (Void);
+  rpc AttachSynonym(GRPCSynonym) returns (Void);
+  rpc DetachSynonym(GRPCSynonym) returns (Void);
+  rpc GetAllWords(Void) returns (GRPCWords);
+  rpc GetSynonymsByWord(GRPCWord) returns (GRPCWord);
+}

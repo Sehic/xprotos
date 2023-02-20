@@ -1,0 +1,12 @@
+syntax = "proto3";
+package com.reeinvent.backend;
+
+option java_multiple_files = true;
+option java_package = "com.reeinvent.backend";
+
+import "user/UserObjects.proto";
+
+service UserService {
+  rpc CreateUser(GRPCUser) returns (GRPCUser);
+  rpc GetUser(GRPCUser) returns (GRPCUser);
+}
